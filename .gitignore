@@ -6,18 +6,6 @@ cat > .gitignore << 'EOF'
 node_modules/
 **/node_modules/
 
-# Package managers
-pnpm-lock.yaml
-yarn-error.log*
-npm-debug.log*
-yarn-debug.log*
-*.log
-
-# Env files
-.env
-.env.*
-!.env.example
-
 # Next.js / Turborepo
 .next/
 .turbo/
@@ -28,17 +16,22 @@ dist/
 build/
 coverage/
 
-# Prisma / SQLite (adjust if you need these tracked)
-*.sqlite
-*.db
-prisma/*.db
-packages/prisma/.env
+# Logs
+*.log
+yarn-error.log*
+npm-debug.log*
+yarn-debug.log*
+
+# Env
+.env
+.env.*
+!.env.example
 
 # Editor
 .vscode/
 .idea/
 
-# Docker
-**/.docker/
+# Prisma / local db (adjust if you actually need these tracked)
+*.sqlite
+*.db
 EOF
-
